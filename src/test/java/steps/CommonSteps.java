@@ -26,6 +26,12 @@ public class CommonSteps {
 		// To hit the GET request
 		restUtils.getUri();
 	}
+	
+	@When("^I make a call to the REST API POST request with (.*)$")
+	public void i_make_a_call_to_the_REST_API_POST_request(String jsonFileName) throws Throwable {
+		// To hit the GET request
+		restUtils.postUri(jsonFileName);
+	}
 
 	@Then("^the HTTP status code from the response should be \"([^\"]*)\"$")
 	public void the_HTTP_status_code_from_the_response_should_be(String statusCode) throws Throwable {
@@ -37,9 +43,21 @@ public class CommonSteps {
 		assertUtils.checkKeyJson(key, expValue);
 	}
 
-	@Then("^the multiple keys are validated as below$")
+	@Then("^the multiple keys are validated as below from Json$")
 	public void validate_multiple_keys(DataTable dataKeys) throws Throwable {
-		assertUtils.checkMultipleKeys(dataKeys);
+		assertUtils.checkMultipleKeysFromJson(dataKeys);
 	}
+	
+	@Then("^the multiple keys are validated as below from XML$")
+	public void validate_multiple_keys_from_xml(DataTable dataKeys) throws Throwable {
+		assertUtils.checkMultipleKeysFromXml(dataKeys);
+	}
+	
+	@When("^I make a call to the SOAP API POST request with (.*)$")
+	public void i_make_a_call_to_the_SOAP_API_POST_request(String xmlFileName) throws Throwable {
+		// To hit the GET request
+		restUtils.postSoapUri(xmlFileName);
+	}
+	
 
 }

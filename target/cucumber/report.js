@@ -1,136 +1,129 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("RestApiExample.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("SoapApiExample.feature");
 formatter.feature({
   "comments": [
     {
       "line": 1,
-      "value": "#Author: ankurs08@outlook.com"
+      "value": "#Author: your.email@your.domain.com"
     },
     {
       "line": 2,
-      "value": "#Keywords Summary : REST API"
+      "value": "#Keywords Summary :"
     },
     {
       "line": 3,
-      "value": "#Feature: The feature is to check the REST API using the rest assured library"
+      "value": "#Feature: List of scenarios."
     }
   ],
   "line": 5,
-  "name": "Validate REST API using the rest assured library",
-  "description": "I want to the cucumber BDD with the rest assured library to test the REST APIs",
-  "id": "validate-rest-api-using-the-rest-assured-library",
+  "name": "Title of your feature",
+  "description": "I want to use this template for my feature file",
+  "id": "title-of-your-feature",
   "keyword": "Feature",
   "tags": [
     {
       "line": 4,
-      "name": "@restGet"
+      "name": "@tag"
     }
   ]
 });
 formatter.scenarioOutline({
-  "line": 19,
-  "name": "Validate multiple response keys",
+  "line": 9,
+  "name": "Validate the post request for REST API",
   "description": "",
-  "id": "validate-rest-api-using-the-rest-assured-library;validate-multiple-response-keys",
+  "id": "title-of-your-feature;validate-the-post-request-for-rest-api",
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 18,
-      "name": "@multiple"
+      "line": 8,
+      "name": "@soap"
     }
   ]
 });
 formatter.step({
-  "line": 20,
+  "line": 10,
   "name": "I have the \"\u003cbaseUrl\u003e\" and \"\u003cendPoint\u003e\"",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 21,
-  "name": "I make a call to the REST API GET request",
+  "line": 11,
+  "name": "I make a call to the SOAP API POST request with \u003cpostDataFile\u003e",
   "keyword": "When "
 });
 formatter.step({
-  "line": 22,
+  "line": 12,
   "name": "the HTTP status code from the response should be \"\u003cstatusCode\u003e\"",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 23,
-  "name": "the multiple keys are validated as below",
+  "line": 13,
+  "name": "the multiple keys are validated as below from XML",
   "rows": [
     {
       "cells": [
-        "actualKey",
-        "expectedValue"
+        "actualKey"
       ],
-      "line": 24
+      "line": 14
     },
     {
       "cells": [
-        "MRData.total",
-        "20"
+        "Code"
       ],
-      "line": 25
-    },
-    {
-      "cells": [
-        "MRData.limit",
-        "30"
-      ],
-      "line": 26
+      "line": 15
     }
   ],
   "keyword": "And "
 });
 formatter.examples({
-  "line": 28,
+  "line": 17,
   "name": "",
   "description": "",
-  "id": "validate-rest-api-using-the-rest-assured-library;validate-multiple-response-keys;",
+  "id": "title-of-your-feature;validate-the-post-request-for-rest-api;",
   "rows": [
     {
       "cells": [
         "baseUrl",
         "endPoint",
-        "statusCode"
+        "statusCode",
+        "postDataFile"
       ],
-      "line": 29,
-      "id": "validate-rest-api-using-the-rest-assured-library;validate-multiple-response-keys;;1"
+      "line": 18,
+      "id": "title-of-your-feature;validate-the-post-request-for-rest-api;;1"
     },
     {
       "cells": [
-        "ergastDev",
-        "2017circuits",
-        "200"
+        "soapBase",
+        "soapEndPoint",
+        "200",
+        "soapPostData.xml"
       ],
-      "line": 30,
-      "id": "validate-rest-api-using-the-rest-assured-library;validate-multiple-response-keys;;2"
+      "line": 19,
+      "id": "title-of-your-feature;validate-the-post-request-for-rest-api;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.scenario({
-  "line": 30,
-  "name": "Validate multiple response keys",
+  "line": 19,
+  "name": "Validate the post request for REST API",
   "description": "",
-  "id": "validate-rest-api-using-the-rest-assured-library;validate-multiple-response-keys;;2",
+  "id": "title-of-your-feature;validate-the-post-request-for-rest-api;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 18,
-      "name": "@multiple"
+      "line": 8,
+      "name": "@soap"
     },
     {
       "line": 4,
-      "name": "@restGet"
+      "name": "@tag"
     }
   ]
 });
 formatter.step({
-  "line": 20,
-  "name": "I have the \"ergastDev\" and \"2017circuits\"",
+  "line": 10,
+  "name": "I have the \"soapBase\" and \"soapEndPoint\"",
   "matchedColumns": [
     0,
     1
@@ -138,12 +131,15 @@ formatter.step({
   "keyword": "Given "
 });
 formatter.step({
-  "line": 21,
-  "name": "I make a call to the REST API GET request",
+  "line": 11,
+  "name": "I make a call to the SOAP API POST request with soapPostData.xml",
+  "matchedColumns": [
+    3
+  ],
   "keyword": "When "
 });
 formatter.step({
-  "line": 22,
+  "line": 12,
   "name": "the HTTP status code from the response should be \"200\"",
   "matchedColumns": [
     2
@@ -151,29 +147,20 @@ formatter.step({
   "keyword": "Then "
 });
 formatter.step({
-  "line": 23,
-  "name": "the multiple keys are validated as below",
+  "line": 13,
+  "name": "the multiple keys are validated as below from XML",
   "rows": [
     {
       "cells": [
-        "actualKey",
-        "expectedValue"
+        "actualKey"
       ],
-      "line": 24
+      "line": 14
     },
     {
       "cells": [
-        "MRData.total",
-        "20"
+        "Code"
       ],
-      "line": 25
-    },
-    {
-      "cells": [
-        "MRData.limit",
-        "30"
-      ],
-      "line": 26
+      "line": 15
     }
   ],
   "keyword": "And "
@@ -181,25 +168,31 @@ formatter.step({
 formatter.match({
   "arguments": [
     {
-      "val": "ergastDev",
+      "val": "soapBase",
       "offset": 12
     },
     {
-      "val": "2017circuits",
-      "offset": 28
+      "val": "soapEndPoint",
+      "offset": 27
     }
   ],
   "location": "CommonSteps.i_have_the_and(String,String)"
 });
 formatter.result({
-  "duration": 490598835,
+  "duration": 530295478,
   "status": "passed"
 });
 formatter.match({
-  "location": "CommonSteps.i_make_a_call_to_the_REST_API_GET_request()"
+  "arguments": [
+    {
+      "val": "soapPostData.xml",
+      "offset": 48
+    }
+  ],
+  "location": "CommonSteps.i_make_a_call_to_the_SOAP_API_POST_request(String)"
 });
 formatter.result({
-  "duration": 2958388593,
+  "duration": 2886003473,
   "status": "passed"
 });
 formatter.match({
@@ -212,14 +205,14 @@ formatter.match({
   "location": "CommonSteps.the_HTTP_status_code_from_the_response_should_be(String)"
 });
 formatter.result({
-  "duration": 695748,
+  "duration": 778522,
   "status": "passed"
 });
 formatter.match({
-  "location": "CommonSteps.validate_multiple_keys(DataTable)"
+  "location": "CommonSteps.validate_multiple_keys_from_xml(DataTable)"
 });
 formatter.result({
-  "duration": 405482406,
+  "duration": 359680102,
   "status": "passed"
 });
 });
