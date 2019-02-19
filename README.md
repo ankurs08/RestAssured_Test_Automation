@@ -3,13 +3,13 @@ Rest Assured test automation framework for testing REST and SOAP APIs using Cucu
 
 This is a java maven API test automation framework
 
-#Dependencies Included
+# Dependencies Included
 
 - BDD powered by cucumber
 - Rest Assured dependencies to tackle APIs
 - Hamcrest Libraries for assertion
 
-#Features
+# Features
 
 REST API Automation
 - Supports Rest API testing using the RestAssured library
@@ -27,20 +27,20 @@ SOAP API Automation
 - Able to traverse through the XML response using XMLPath
 - Able to send the XML request body with the post operation
 
-#Utilities and Functions
+# Utilities and Functions
 
 AssertUtils
-	checkStatusCode
-	checkKeyJson
-	checkMultipleKeysFromJson
-	checkMultipleKeysFromXml
+- checkStatusCode
+- checkKeyJson
+- checkMultipleKeysFromJson
+- checkMultipleKeysFromXml
 
 PropertiesUtils
-	getPropValue
+- getPropValue
 
 RestUtils
-	setBaseUri
-	getUri
-	postUri
-	postSoapUri
+- setBaseUri
+- getUri
+- postUri
+- postSoapUri
 	
